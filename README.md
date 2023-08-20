@@ -1,1 +1,1 @@
-A url-shortening webpage built using React and Flask.
+A url-shortening webpage built using React, Flask, and Firebase.
