@@ -6,6 +6,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCyqFRLHF2mHVKk9A_AZHEhvFFE1W40m0k",
+  authDomain: "url-shortener-c511a.firebaseapp.com",
+  projectId: "url-shortener-c511a",
+  storageBucket: "url-shortener-c511a.appspot.com",
+  messagingSenderId: "770055564373",
+  appId: "1:770055564373:web:6a26ffbc3bdb46cc5738dc",
+  measurementId: "G-W166HSYDN7"
+};
+
+initializeApp(firebaseConfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
