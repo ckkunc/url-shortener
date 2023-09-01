@@ -203,7 +203,7 @@ render() {
                             </div> :
                             <div>
                                 <span className="visually-hidden spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                <span>Mini Link It</span> // Show 'Mini Link It' when not loading
+                                <span>Mini Link It</span>
                             </div>
                     }
 
