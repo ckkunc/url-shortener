@@ -39,11 +39,11 @@ class Form extends React.Component {
 
         // If the user has input a preferred alias then we use it, if not, we generate one
         var generatedKey = nanoid(5); // Generate a random key using nanoid
-        var generatedURL = "minilinkit.com/" + generatedKey // Construct the shortened URL
+        var generatedURL = "http://127.0.0.1:5000/" + generatedKey // Construct the shortened URL
 
         if (this.state.preferedAlias !== '') {
             generatedKey = this.state.preferedAlias // Use the user's preferred alias as the key
-            generatedURL = "minilinkit.com/" + this.state.preferedAlias // Construct the shortened URL using the preferred alias
+            generatedURL = "http://127.0.0.1:5000/" + this.state.preferedAlias // Construct the shortened URL using the preferred alias
         }
 
         const db = getDatabase(); // Get a reference to the Firebase database
@@ -166,34 +166,6 @@ render() {
                 >
                     {this.state.errorMessage.longURL}
                 </div>
-
-                <div className="form-group">
-                    <label htmlFor="basic-url">Your Mini URL</label>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">minilinkit.com/</span>
-                        </div>
-                        <input
-                            id="preferedAlias"
-                            onChange={this.handleChange} // Call handleChange method when the input changes
-                            value={this.state.preferedAlias} // The current value of the preferedAlias state
-                            className={
-                                this.hasError("preferedAlias") // Add 'is-invalid' class if there's an error with preferedAlias
-                                    ? "form-control is-invalid"
-                                    : "form-control"
-                            }
-                            type="text" placeholder="eg. 3fwias (Optional)"
-                        />
-                    </div>
-                    <div
-                        className={
-                            this.hasError("suggestedAlias") ? "text-danger" : "visually-hidden" // Show error message if there's an error with suggestedAlias
-                        }
-                    >
-                        {this.state.errorMessage.suggestedAlias}
-                    </div>
-                </div>
-
 
                 <button className="btn btn-primary" type="button" onClick={this.onSubmit}>
                     {

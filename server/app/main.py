@@ -6,7 +6,7 @@ import os
 # Initialize Firebase credentials and app
 cred_obj = firebase_admin.credentials.Certificate('./ServiceAccountKey.json')
 default_app = firebase_admin.initialize_app(cred_obj,  {
-	'databaseURL': ''
+	'databaseURL': 'https://url-shortener-c511a-default-rtdb.firebaseio.com/'
 	})
 
 # Initialize Flask app with static and template folders
